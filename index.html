@@ -1,256 +1,197 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neurochemistry Explorer | Understanding the Brain</title>
+    <title>CV - Slobozeanu Ion</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        
         body {
             font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            background-color: #f3f4fb;
+            color: #333;
         }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+        .main-card {
+            background-color: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px rgba(255, 255, 255, 0.1) solid;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px rgba(255, 255, 255, 0.2) solid;
-        }
-
-        .hormone-tag {
-            font-size: 0.7rem;
+        .section-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #6d5dfc;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            padding: 2px 8px;
-            border-radius: 12px;
         }
-
-        ::-webkit-scrollbar {
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #444;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .profile-img-container {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f3f4fb 100%);
+            border: 4px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .purple-dot {
+            height: 8px;
             width: 8px;
+            background-color: #6d5dfc;
+            border-radius: 50%;
+            display: inline-block;
         }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #475569;
+        .stat-box {
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
         }
     </style>
 </head>
-<body class="gradient-bg text-slate-200 min-h-screen">
+<body class="p-4 md:p-8">
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800 p-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
-                <i class="fas fa-brain mr-2"></i>NeuroChem
-            </h1>
-            <div class="space-x-6 hidden md:flex">
-                <a href="#intro" class="hover:text-blue-400 transition">Basics</a>
-                <a href="#chemicals" class="hover:text-blue-400 transition">Chemicals</a>
-                <a href="#mechanics" class="hover:text-blue-400 transition">Mechanics</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header id="intro" class="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h2 class="text-5xl md:text-7xl font-extrabold mb-6">The Alchemy of <span class="text-blue-500">Consciousness.</span></h2>
-        <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Every thought, emotion, and action is governed by a delicate symphony of chemicals. Explore how your brain uses hormones and neurotransmitters to define your reality.
-        </p>
-    </header>
-
-    <!-- Chemical Cards Grid -->
-    <section id="chemicals" class="max-w-6xl mx-auto px-6 py-12">
-        <div class="flex items-center mb-10 space-x-4">
-            <div class="h-px flex-1 bg-slate-800"></div>
-            <h3 class="text-2xl font-semibold uppercase tracking-widest text-slate-500">Key Neurochemicals</h3>
-            <div class="h-px flex-1 bg-slate-800"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="chem-container">
-            <!-- Content generated by JS -->
-        </div>
-    </section>
-
-    <!-- How it Works -->
-    <section id="mechanics" class="max-w-4xl mx-auto px-6 py-24">
-        <div class="bg-slate-800/40 rounded-3xl p-8 md:p-12 border border-slate-700">
-            <h3 class="text-3xl font-bold mb-6 text-center">The Synaptic Spark</h3>
-            <div class="space-y-8">
-                <div class="flex gap-6">
-                    <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center shrink-0">
-                        <span class="text-blue-400 font-bold">01</span>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Synthesis & Storage</h4>
-                        <p class="text-slate-400">Chemicals are created from amino acids (like Tryptophan for Serotonin) and stored in tiny sacs called vesicles at the end of neurons.</p>
-                    </div>
+    <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- SECȚIUNEA 01: PROFIL -->
+        <div class="main-card p-6 md:p-10">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <div class="profile-img-container shadow-sm shrink-0 mx-auto md:mx-0">
+                    <!-- Placeholder pentru imaginea de profil -->
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#6d5dfc" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 </div>
-                <div class="flex gap-6">
-                    <div class="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center shrink-0">
-                        <span class="text-emerald-400 font-bold">02</span>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">The Release (Exocytosis)</h4>
-                        <p class="text-slate-400">When an electrical pulse hits the end of the nerve, these sacs burst, spilling chemicals into the 'synapse'—the gap between cells.</p>
-                    </div>
-                </div>
-                <div class="flex gap-6">
-                    <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center shrink-0">
-                        <span class="text-purple-400 font-bold">03</span>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-semibold mb-2">Receptor Binding</h4>
-                        <p class="text-slate-400">The chemical floats across and clicks into a receptor on the next cell like a key in a lock, triggering a new electrical pulse.</p>
+                
+                <div class="flex-1 text-center md:text-left">
+                    <div class="section-number">01. Cuprins & Introducere</div>
+                    <h1 class="text-3xl md:text-4xl font-bold mt-1 mb-4 text-slate-800">Slobozeanu Ion</h1>
+                    <p class="text-slate-600 leading-relaxed text-sm md:text-base mb-6">
+                        Sunt o persoana înțelegătoare, curioasa, cei place sa încerce lucruri noi întrucât nu știi niciodată dacă ceva ți-ar plăcea fara sa încerci. Îmi place cel mai mult să mă joc in jocuri video pentru relaxare in timpul liber.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-4">
+                        <div class="contact-item justify-center md:justify-start">
+                            <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>+373 608 765 69</span>
+                        </div>
+                        <div class="contact-item justify-center md:justify-start">
+                            <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span>thecheesexperiment132@gmail.com</span>
+                        </div>
+                        <div class="contact-item justify-center md:justify-start">
+                            <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>str. Aerodromului 6, Chișinău, Moldova</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-800 py-12 text-center text-slate-500 text-sm">
-        <p>&copy; 2024 Neurochemistry Project. Educational Resource for GitHub.</p>
-        <p class="mt-2">Disclaimer: This information is for educational purposes and does not constitute medical advice.</p>
+        <!-- SECȚIUNEA 02: EDUCAȚIE -->
+        <div class="main-card p-6 md:p-10">
+            <div class="section-number">02. Educație & Formare</div>
+            <div class="section-title">Parcurs academic</div>
+            
+            <div class="space-y-8 mt-6">
+                <!-- Liceu -->
+                <div class="flex gap-6">
+                    <div class="hidden md:block w-32 font-bold text-indigo-600 text-sm pt-1">PREZENT</div>
+                    <div class="relative pl-6 border-l-2 border-indigo-100 pb-2">
+                        <div class="absolute -left-[9px] top-1 w-4 h-4 bg-indigo-500 rounded-full border-4 border-white"></div>
+                        <h3 class="font-bold text-lg leading-tight">Liceul Teoretic "Mihai Marinciuc"</h3>
+                        <p class="text-sm text-slate-500 mb-2">Chișinău, Moldova</p>
+                        <p class="text-sm text-slate-600 italic">Sunt elev in clasa 12 "B" uman</p>
+                    </div>
+                </div>
+                
+                <!-- Gimnaziu -->
+                <div class="flex gap-6">
+                    <div class="hidden md:block w-32 font-bold text-slate-400 text-sm pt-1">2018 — 2023</div>
+                    <div class="relative pl-6 border-l-2 border-slate-100 pb-2">
+                        <div class="absolute -left-[9px] top-1 w-4 h-4 bg-slate-300 rounded-full border-4 border-white"></div>
+                        <h3 class="font-bold text-lg leading-tight">Gimnaziul "Mihail Sadoveanu"</h3>
+                        <p class="text-sm text-slate-500 mb-2">Baimaclia, Cantemir</p>
+                        <p class="text-sm text-slate-600">Am absolvit ciclul gimnazial cu note relativ bune, ce a marcat începutul meu in studiile liceale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECȚIUNEA 04: APTITUDINI -->
+        <div class="main-card p-6 md:p-10">
+            <div class="section-number">03. Aptitudini Desfășurate</div>
+            <div class="section-title">Soft Skills & Abilități</div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mt-6">
+                <!-- Compresiune -->
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-1">Compresiune</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Capacitatea de a procesa și sintetiza informații complexe rapid, transformându-le în concepte ușor de înțeles pentru toți cei din jur.
+                    </p>
+                </div>
+                
+                <!-- Curiozitate -->
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-1">Curiozitate</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Dorința constantă de a învăța și de a explora domenii noi, căutând mereu soluții inovatoare și perspective diferite în orice activitate.
+                    </p>
+                </div>
+                
+                <!-- Amabilitate -->
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-1">Amabilitate</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Abordarea prietenoasă și respectuoasă în interacțiunile zilnice, contribuind activ la crearea unui mediu de lucru pozitiv și armonios pentru echipă.
+                    </p>
+                </div>
+                
+                <!-- Empatie -->
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-1">Empatie</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">
+                        Capacitatea de a înțelege emoțiile celorlalți și de a oferi sprijin autentic, facilitând o comunicare deschisă și relații interpersonale de durată.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECȚIUNEA 05: VIZIUNE -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-indigo-600 text-white stat-box flex flex-col items-center justify-center">
+                <div class="text-2xl font-bold mb-1">Zeci</div>
+                <div class="text-[10px] uppercase tracking-widest opacity-80">Prieteni Apropiați</div>
+            </div>
+            <div class="bg-fuchsia-500 text-white stat-box flex flex-col items-center justify-center">
+                <div class="text-2xl font-bold mb-1">100%</div>
+                <div class="text-[10px] uppercase tracking-widest opacity-80">Energie Pozitivă</div>
+            </div>
+            <div class="bg-rose-500 text-white stat-box flex flex-col items-center justify-center">
+                <div class="text-2xl font-bold mb-1">∞</div>
+                <div class="text-[10px] uppercase tracking-widest opacity-80">Dorință de Învățare</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="mt-12 text-center text-slate-400 text-xs pb-10">
+        © 2024 Slobozeanu Ion • Creat cu pasiune pentru explorare
     </footer>
 
-    <script>
-        const chemicals = [
-            {
-                name: "Dopamine",
-                title: "The Reward Molecule",
-                category: "Neurotransmitter",
-                color: "blue",
-                released: "Anticipation of reward, eating, physical activity, sex.",
-                quantity: "Small pulses (nanomolar concentrations) at synapses.",
-                affects: "Motivation, drive, focus, and motor control.",
-                icon: "fa-bolt"
-            },
-            {
-                name: "Serotonin",
-                title: "The Confidence Molecule",
-                category: "Neurotransmitter",
-                color: "emerald",
-                released: "Sunlight exposure, exercise, social dominance, gut activity.",
-                quantity: "Basal levels maintained steadily; 90% is found in the gut.",
-                affects: "Mood regulation, sleep cycle, appetite, and social behavior.",
-                icon: "fa-sun"
-            },
-            {
-                name: "Cortisol",
-                title: "The Stress Hormone",
-                category: "Steroid Hormone",
-                color: "red",
-                released: "Waking up, physical threat, psychological stress.",
-                quantity: "Diurnal rhythm; peaks (10-20 mcg/dL) in early morning.",
-                affects: "Metabolism, blood sugar, and 'fight or flight' response.",
-                icon: "fa-exclamation-triangle"
-            },
-            {
-                name: "Oxytocin",
-                title: "The Bonding Molecule",
-                category: "Neuropeptide",
-                color: "pink",
-                released: "Physical touch, childbirth, social interaction, breastfeeding.",
-                quantity: "Surges significantly during bonding events.",
-                affects: "Trust, empathy, relationship building, and anxiety reduction.",
-                icon: "fa-heart"
-            },
-            {
-                name: "Adrenaline",
-                title: "The Energy Molecule",
-                category: "Hormone / NT",
-                color: "orange",
-                released: "Sudden fear, intense exercise, high-stakes situations.",
-                quantity: "Rapid massive spikes via the adrenal glands.",
-                affects: "Heart rate, pupil dilation, and immediate physical power.",
-                icon: "fa-fire"
-            },
-            {
-                name: "GABA",
-                title: "The Relaxation Molecule",
-                category: "Inhibitory NT",
-                color: "indigo",
-                released: "Meditation, deep breathing, alcohol consumption (mimics).",
-                quantity: "High concentrations throughout the cortex to maintain balance.",
-                affects: "Reduces neuronal excitability; helps with sleep and calm.",
-                icon: "fa-moon"
-            }
-        ];
-
-        const container = document.getElementById('chem-container');
-
-        chemicals.forEach(chem => {
-            const card = document.createElement('div');
-            card.className = 'glass-card rounded-2xl p-6 flex flex-col h-full';
-            
-            const colorClass = {
-                blue: 'text-blue-400 border-blue-400/30',
-                emerald: 'text-emerald-400 border-emerald-400/30',
-                red: 'text-red-400 border-red-400/30',
-                pink: 'text-pink-400 border-pink-400/30',
-                orange: 'text-orange-400 border-orange-400/30',
-                indigo: 'text-indigo-400 border-indigo-400/30'
-            }[chem.color];
-
-            const bgClass = {
-                blue: 'bg-blue-400/10',
-                emerald: 'bg-emerald-400/10',
-                red: 'bg-red-400/10',
-                pink: 'bg-pink-400/10',
-                orange: 'bg-orange-400/10',
-                indigo: 'bg-indigo-400/10'
-            }[chem.color];
-
-            card.innerHTML = `
-                <div class="flex justify-between items-start mb-4">
-                    <div class="p-3 rounded-xl ${bgClass} ${colorClass}">
-                        <i class="fas ${chem.icon} text-xl"></i>
-                    </div>
-                    <span class="hormone-tag border ${colorClass}">${chem.category}</span>
-                </div>
-                <h4 class="text-2xl font-bold mb-1">${chem.name}</h4>
-                <p class="text-sm italic text-slate-500 mb-4">${chem.title}</p>
-                
-                <div class="space-y-4 text-sm flex-grow">
-                    <div>
-                        <span class="block text-xs font-semibold text-slate-500 uppercase">When is it released?</span>
-                        <p class="text-slate-300">${chem.released}</p>
-                    </div>
-                    <div>
-                        <span class="block text-xs font-semibold text-slate-500 uppercase">Typical Quantities</span>
-                        <p class="text-slate-300">${chem.quantity}</p>
-                    </div>
-                    <div class="pt-4 border-t border-white/5">
-                        <span class="block text-xs font-semibold text-slate-500 uppercase">Impact on us</span>
-                        <p class="text-slate-300">${chem.affects}</p>
-                    </div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-    </script>
 </body>
 </html>
-
-```
